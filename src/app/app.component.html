@@ -1,0 +1,15 @@
+<div class="container text-center todo-app">
+  <div class="jumbotron py-2 px-3 my-5 rounded bg-white text-dark">
+    <h1>To-Do List</h1>
+    <p class="lead">This is a simple To-Do list Angular app, with Reactive Forms and two-way binding.</p>
+    <hr class="my-4">
+    <p class="lead">
+      <a class="btn btn-secondary btn-lg text-light mx-3" href="https://github.com/xr-alex/angular-todo" target="_blank" role="button">Check out the source code.</a>
+      <a class="btn btn-primary btn-lg text-light mx-3" href="https://xr-alex.github.io/" target="_blank" role="button">Check out my online portfolio.</a>
+    </p>
+  </div>
+  <app-add-todo (add)=onAddEvent($event)>
+  </app-add-todo>
+  <app-todo-list [todoList]="todoList">
+  </app-todo-list>
+</div>

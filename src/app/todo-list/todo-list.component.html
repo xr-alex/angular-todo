@@ -1,0 +1,9 @@
+<div class="todo-list card p-2 my-3">
+  <div *ngIf="todoList.length===0" class="my-2">
+    <p class="text-muted m-0">It seems you've completed all of your tasks.<br>Good job!</p>
+  </div>
+  <app-todo-item *ngFor="let todo of todoList"
+    [todo]="todo"
+    (deleteEE)=onDeleteEvent($event)>
+  </app-todo-item>
+</div>

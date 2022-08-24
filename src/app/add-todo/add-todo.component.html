@@ -1,0 +1,16 @@
+<form [formGroup]="todoForm" class="add-container">
+<!-- Useful for FormGroup validation testing -->
+  <!-- <p>Form value: {{ todoForm.value | json }}</p>
+  <p>Form status: {{ todoForm.status | json }}</p> -->
+  <div
+    *ngIf="todoForm.controls['description'].invalid && (todoForm.controls['description'].dirty || todoForm.controls['description'].touched)"
+    class="alert alert-warning">
+    <div *ngIf="todoForm.controls['description'].errors?['required']:false">
+      To add a To-Do item to the list a description is required.
+    </div>
+  </div>
+  <div class="input-group">
+    <input type="text" formControlName="description" class="new-todo-name form-control text-center" placeholder="Add a new todo...">
+    <button class="btn btn-primary add-todo" (click)="onAddClick()">Add</button>
+  </div>
+</form>
